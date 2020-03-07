@@ -4,3 +4,4 @@
 Gemfile.lock
 .DS_Store
 assets/img_archive/
+.image-optim-cache
