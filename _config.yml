@@ -100,7 +100,7 @@ plugins:
 # jekyll-pagination-v2
 pagination:
   enabled: true
-  per_page: 5
+  per_page: 7
   permalink: "/page/:num/"
   title: ":title"
   limit: 0
