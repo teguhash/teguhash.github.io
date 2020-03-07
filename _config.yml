@@ -88,10 +88,10 @@ exclude:
 plugins:
   - jekyll-seo-tag
   - jekyll-feed
-  - jekyll-paginate-v2
   - jekyll-sitemap
   - jekyll-zopfli
   - jekyll-image-optim
+  - jekyll-paginate-v2
 
 
 ################
