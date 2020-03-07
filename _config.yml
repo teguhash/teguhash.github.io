@@ -9,7 +9,7 @@ description: >
 
 # URL including protocol for your site (use "http://localhost:4000" if developing locally)
 url: "https://teguhash.github.io"
-#url: "localhost:4000"
+# url: "http://localhost:4000"
 # Subpath if necessary
 baseurl: ""
 
@@ -29,28 +29,6 @@ nav:
     url: "/about"
   - name: "Archive"
     url: "/archive"
-  - name: "Wikipedia Articles"
-    url: "/wikipedia"
-
-# Refer to https://posativ.org/isso/docs/configuration/client for config options
-isso:
-  enabled: false
-  prefix: ""
-  script_src: ""
-  css: "true"
-  lang: "en"
-  reply_to_self: false
-  require_author: "false"
-  require_email: "false"
-  max_comments_top: "10"
-  max_comments_nested: "5"
-  reveal_on_click: "10"
-  avatar: "false"
-  # avatar_bg: "#f0f0f0"
-  # avatar_fg: "#9abf88 #5698c4 #e279a3 #9163b6"
-  vote: "true"
-  vote_levels: ""
-  feed: "false"
 
 fathom:
   enabled: false
@@ -92,6 +70,7 @@ plugins:
   - jekyll-zopfli
   - jekyll-image-optim
   - jekyll-paginate-v2
+  - jekyll-analytics
 
 
 ################
@@ -131,5 +110,12 @@ image_optim:
 sass:
   style: compressed
 permalink: pretty
+
+
+# GA settings
+jekyll_analytics:
+  GoogleAnalytics:
+    id: UA-159912088-1
+    anonymizeIp: false 
 
 timezone: Asia/Jakarta

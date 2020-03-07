@@ -4,8 +4,11 @@ layout: default
 
 <article class="post">
   <header>
-    <div class="header-small">
-      <a href="{{ site.url }}{{ site.baseurl }}">{{ site.title | escape }}</a>
+    <div class="header-nav">
+      <a href="{{ site.url }}{{ site.baseurl }}">Home</a>
+    {% for nav in site.nav %}
+      <a href="{{ nav.url | prepend: site.baseurl }}">{{ nav.name }}</a>
+    {% endfor %}
     </div>
 
     <div class="page-title">{{ page.title | escape }}</div>
