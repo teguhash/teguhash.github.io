@@ -118,4 +118,8 @@ jekyll_analytics:
     id: UA-159912088-1
     anonymizeIp: false 
 
+# Disqus
+disqus:
+  shortname: teguhash-github
+
 timezone: Asia/Jakarta

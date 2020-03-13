@@ -31,8 +31,12 @@ layout: default
       {% endfor %}
     </div>
     {% endif %}
+    <br/>
+    <br/>
 
-    <div id="commento"></div>
-    <script src="https://cdn.commento.io/js/commento.js"></script>
+    {% if site.disqus.shortname %}
+      {% include disqus_comments.html %}
+    {% endif %}
+                            
   </div>
 </article>

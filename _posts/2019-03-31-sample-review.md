@@ -3,6 +3,7 @@ layout: post
 title: A Sample Review
 description: Review of something
 published: true
+comments: true
 tags:
   - sample
   - test tag
