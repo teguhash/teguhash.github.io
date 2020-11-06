@@ -12,7 +12,7 @@ url: "https://teguhash.github.io"
 #url: "http://localhost:4000"
 # Subpath if necessary
 # baseurl: "https://teguhash.github.io"
-#baseurl: ""
+baseurl: ""
 
 markdown: kramdown
 kramdown:
