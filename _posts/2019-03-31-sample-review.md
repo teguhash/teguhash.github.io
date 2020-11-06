@@ -7,7 +7,6 @@ comments: true
 tags:
   - sample
   - test tag
-  - til
 ---
 
 $$ P(A | B) = \frac{P(B | A) P (A)}{P(B)} $$

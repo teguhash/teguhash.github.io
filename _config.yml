@@ -8,14 +8,15 @@ description: >
   A description for your page.
 
 # URL including protocol for your site (use "http://localhost:4000" if developing locally)
-url: "https://teguhash.github.io"
-# url: "http://localhost:4000"
+# url: "https://teguhash.github.io"
+url: "http://localhost:4000"
 # Subpath if necessary
+# baseurl: "https://teguhash.github.io"
 baseurl: ""
 
 markdown: kramdown
 kramdown:
-  math_engine: mathjax
+  math_engine: katex
   parse_block_html: true
 
 theme: kiko-minus
@@ -74,6 +75,7 @@ plugins:
   - jekyll-image-optim
   - jekyll-paginate-v2
   - jekyll-analytics
+  - jekyll-katex
 
 
 ################
