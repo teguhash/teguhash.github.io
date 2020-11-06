@@ -4,3 +4,4 @@ source "https://rubygems.org"
 gemspec
 gem "jgd"
 gem 'jekyll-analytics'
+gem "kramdown-parser-gfm"

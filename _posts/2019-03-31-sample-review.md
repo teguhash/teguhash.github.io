@@ -7,11 +7,8 @@ comments: true
 tags:
   - sample
   - test tag
+  - til
 ---
-<dl>
-  <dt>Rating:</dt>
-  <dd>4.5/5</dd>
-</dl>
 
 $$ P(A | B) = \frac{P(B | A) P (A)}{P(B)} $$
 
@@ -21,6 +18,22 @@ I saw a $$ \pi $$ at the $$ \frac{a}{b} $$ Lorem ipsum dolor sit amet, in sed ta
 
 <details><summary markdown="span">Click Me</summary>
 **Quidam doctus salutatus ut eam, rebum utroque postulant ad sea, nulla munere persequeris no est. His indoctum reprehendunt id, cu consul definitionem cum. Ea meis nulla explicari usu, an vim ipsum tibique. Inani novum quaeque pro cu. Ad vis illum pertinacia, mei movet tractatos at, et solum appareat recteque usu. Feugiat patrioque nam cu, erat rationibus ut eam, erat natum option ius ut.**
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
+
+{% highlight python %}
+def test_function(param):
+    print('this is a function')
+
+test_function()
+{% endhighlight %}
+
 </details>
 
 Ut qui salutatus forensibus disputationi. Ad dolorum moderatius mel, graeco appetere ex pri. Saepe appetere usu at, posse laoreet offendit ea qui, mutat omnium pri no. Insolens platonem vel no, vim expetendis mediocritatem te. Voluptua mandamus senserit per in.
