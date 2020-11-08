@@ -4,5 +4,5 @@ title: Archive
 permalink: /archive/
 pagination:
   enabled: true
-  per_page: 1000
+  per_page: 100
 ---
