@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.css" integrity="sha384-bsHo4/LA+lkZv61JspMDQB9QP1TtO4IgOf2yYS+J6VdAYLVyx1c3XKcsHh0Vy8Ws" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.js" integrity="sha384-4z8mjH4yIpuK9dIQGR1JwbrfYsStrNK6MP+2Enhue4eyo0XlBDXOIPc8b6ZU0ajz" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Why Gradient Boosting Almost Always Outperforms Random Forest | teguha.sh</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Why Gradient Boosting Almost Always Outperforms Random Forest" />
+<meta name="author" content="Teguh A.S. Hidayat" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="TLDR: GB can reduce error via both bias and variance, RF can only reduce error by reducing variance" />
+<meta property="og:description" content="TLDR: GB can reduce error via both bias and variance, RF can only reduce error by reducing variance" />
+<link rel="canonical" href="https://teguhash.github.io/til/2020/11/11/why-gb-outperforms-rf/" />
+<meta property="og:url" content="https://teguhash.github.io/til/2020/11/11/why-gb-outperforms-rf/" />
+<meta property="og:site_name" content="teguha.sh" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-11-11T00:00:00+07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Why Gradient Boosting Almost Always Outperforms Random Forest" />
+<meta name="twitter:site" content="@teguhash" />
+<meta name="twitter:creator" content="@Teguh A.S. Hidayat" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"https://teguhash.github.io/til/2020/11/11/why-gb-outperforms-rf/"},"@type":"BlogPosting","headline":"Why Gradient Boosting Almost Always Outperforms Random Forest","dateModified":"2020-11-11T00:00:00+07:00","datePublished":"2020-11-11T00:00:00+07:00","url":"https://teguhash.github.io/til/2020/11/11/why-gb-outperforms-rf/","author":{"@type":"Person","name":"Teguh A.S. Hidayat"},"description":"TLDR: GB can reduce error via both bias and variance, RF can only reduce error by reducing variance","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="https://teguhash.github.io/feed.xml" title="teguha.sh" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logos/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/logos/favicon-16x16.png">
+  </head>
+
+  <body>
+    <main class="page-content" aria-label="Content">
+      <div class="main-wrapper">
+        <article class="post">
+  <header>
+    <div class="header-nav">
+      <a href="https://teguhash.github.io">Home</a>
+    
+      <a href="/til">#TIL</a>
+    
+      <a href="/about">About</a>
+    
+      <a href="/archive">Archive</a>
+    
+    </div>
+
+    <div class="page-title">Why Gradient Boosting <i>Almost</i> Always Outperforms Random Forest</div>
+
+    <span class="page-date">
+      <time>11 Nov 2020</time>
+    </span>
+  </header>
+
+  <div class="page-content">
+    <p><em>TLDR: GB can reduce error via both bias and variance, RF can only reduce error by reducing variance</em> <br />
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>error</mtext><mo>=</mo><mtext>bias</mtext><mo>+</mo><mtext>variance</mtext></mrow><annotation encoding="application/x-tex">\text{error} = \text{bias} + \text{variance}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord text"><span class="mord">error</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord">bias</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66786em;vertical-align:0em;"></span><span class="mord text"><span class="mord">variance</span></span></span></span></span> <br />
+When building a Random Forest, we build a lot of <em>fully grown</em> trees. Bias of the RF model equals to an individual tree hence the needs to build a fully grown tree with really low bias.
+To reduce the overall error, we also reduce its variance by building a lot of trees.
+With Gradient Boost, we build a lot of weak learners (small trees) and aggregate their results to reduce variance. And since we build a lot of these weak learners that improve upon previously built tree, we are also reducing its total bias.</p>
+
+
+    
+    <br/>
+    <br/>
+
+    
+      
+
+    
+                            
+  </div>
+</article>
+<div class="footer">
+  <hr />
+    © 2020 teguha.sh. All rights reserved.
+
+  <script type="text/javascript">
+    $("script[type='math/tex']").replaceWith(
+      function(){
+        var tex = $(this).text();
+        return katex.renderToString(tex, {displayMode: false});
+    });
+    
+    $("script[type='math/tex; mode=display']").replaceWith(
+      function(){
+        var tex = $(this).text();
+        return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
+    });
+  </script>
+</div>
+</div>
+    </main>
+  </body>
+
+  
+
+  
+</html>
