@@ -3,6 +3,9 @@ layout: post
 title: Why Gradient Boosting <i>Almost</i> Always Outperforms Random Forest
 description: 'TLDR: GB can reduce error via both bias and variance, RF can only reduce error by reducing variance'
 comments: true
+tags:
+  - machine learning
+  - algorithm
 categories:
   - til
 ---
