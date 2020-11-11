@@ -1,1 +1,1 @@
-export JEKYLL_ENV=producttion && bundle exec jgd -b master -r source
+export JEKYLL_ENV=production && bundle exec jgd -b master -r source
