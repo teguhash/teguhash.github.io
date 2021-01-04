@@ -9,7 +9,7 @@ layout: default
 
   <nav class="header-nav">
     {% for nav in site.nav %}
-      <a href="{{ nav.url | prepend: site.baseurl }}">{{ nav.name }}</a>
+    <a href="{{ nav.url | prepend: site.baseurl }}"><u>{{ nav.name }}</u></a>
     {% endfor %}
   </nav>
 </header>
