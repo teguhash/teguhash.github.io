@@ -29,6 +29,8 @@ theme: kiko-minus
 nav:
   - name: "#TIL"
     url: "/til"
+  - name: "Learning Notes"
+    url: "/ln"
   - name: "About"
     url: "/about"
   - name: "Archive"

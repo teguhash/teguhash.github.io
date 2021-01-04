@@ -4,6 +4,6 @@ title: Learning Notes
 permalink: /ln/
 pagination:
   enabled: true
-  category: til
+  category: ln
   per_page: 10
 ---
