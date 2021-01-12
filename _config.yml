@@ -8,10 +8,10 @@ description: >
   A description for your page.
 
 # URL including protocol for your site (use "http://localhost:4000" if developing locally)
-url: "https://teguhash.github.io"
+url: "https://teguha.sh"
 #url: "http://localhost:4000"
 # Subpath if necessary
-# baseurl: "https://teguhash.github.io"
+# baseurl: "https://teguha.sh"
 baseurl: ""
 
 markdown: kramdown
